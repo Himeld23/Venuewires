@@ -22,9 +22,9 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-4 py-20 md:py-28">
           <p className="text-xs tracking-[0.25em] text-gold">INDIA&apos;S LEADING EVENT &amp; VENUE PLATFORM</p>
           <h1 className="mt-4 text-4xl md:text-6xl leading-tight">
-            Your Event. Your Choices.<br /><span className="text-gold">One Platform.</span>
+            Find. Compare. Plan.<br /><span className="text-gold">Book with Venue Wires.</span>
           </h1>
-          <p className="mt-4 text-lg">Search. Compare. Choose. Book.</p>
+          <p className="mt-4 text-lg">Your event. Your choices. One platform.</p>
           <p className="mt-2 max-w-xl text-white/75 text-sm">
             Find the perfect venue, photographer, decorator, caterer, makeup artist and more — all in one place.
           </p>
@@ -142,7 +142,7 @@ export default async function Home() {
         <h2 className="text-3xl">Why Venue Wires?</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[["Search", "Browse verified venues across Kolkata"], ["Compare", "Prices, facilities and policies side-by-side"],
-            ["Choose", "Check live availability for your date"], ["Book Direct", "Call or WhatsApp the venue — no middleman markup"]].map(([t, d], i) => (
+            ["Choose", "Check live availability for your date"], ["Book Easily", "Book your venue with the help of Venue Wires — quick, simple and hassle-free"]].map(([t, d], i) => (
             <div key={t} className="card p-5">
               <div className="text-gold font-serif text-2xl">0{i + 1}</div>
               <h3 className="mt-1 text-lg">{t}</h3><p className="mt-1 text-sm text-ink/60">{d}</p>
