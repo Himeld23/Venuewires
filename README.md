@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Venue Wires — marketplace prototype
 
-## Getting Started
+Next.js (App Router) prototype of the Venue Wires venue & event marketplace: find → filter → compare → check availability → enquire, plus partner and admin areas. Uses seed data (real venues from venuewires.in; ratings, vendors and dashboard figures are placeholders).
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build && npm start   # production check
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy to Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Push this folder to a GitHub repo.
+2. In Vercel: **Add New → Project → import the repo**. Framework preset is detected automatically (Next.js); no env vars or settings are needed.
+3. Deploy. Every later `git push` redeploys.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+(CLI alternative: `npx vercel` then `npx vercel --prod`.)
 
-## Learn More
+## Demo logins (`/partner/login`)
 
-To learn more about Next.js, take a look at the following resources:
+| Role | Email | Password |
+|---|---|---|
+| Vendor | vendor@venuewires.demo | Vendor@123 |
+| Venue | venue@venuewires.demo | Venue@123 |
+| Admin | admin@venuewires.demo | Admin@123 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Prototype limits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Accounts, listings and sessions are stored in the **browser's localStorage** (per device/browser), not a server. Passwords are plaintext. Replace with real auth + database in the backend phase.
+- `POST /api/enquiry` is a stub that only logs and returns a reference number.
+- All data access goes through `src/lib/api.ts` (venues/vendors) and `src/lib/auth.ts` / `src/lib/listings.ts` (partner area) — swap those for real API calls later.
