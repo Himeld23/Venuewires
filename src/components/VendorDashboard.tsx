@@ -14,8 +14,8 @@ const NAV: [Section, string][] = [
   ["overview", "Overview"], ["profile", "Profile"], ["packages", "Menus / Packages"], ["areas", "Service Areas"],
   ["availability", "Availability"], ["leads", "Leads"], ["reviews", "Reviews"], ["billing", "Billing"],
 ];
-const STATUSES: LeadStatus[] = ["New", "Contacted", "Quoted", "Won", "Lost"];
-const statusColor: Record<LeadStatus, string> = {
+export const STATUSES: LeadStatus[] = ["New", "Contacted", "Quoted", "Won", "Lost"];
+export const statusColor: Record<LeadStatus, string> = {
   New: "bg-[#fbf3e1] text-gold-dark", Contacted: "bg-[#e8eef6] text-[#3b5b86]", Quoted: "bg-[#efe8f6] text-[#6a4b8a]",
   Won: "bg-[#e8f1ec] text-ok", Lost: "bg-[#fbeceb] text-bad",
 };
